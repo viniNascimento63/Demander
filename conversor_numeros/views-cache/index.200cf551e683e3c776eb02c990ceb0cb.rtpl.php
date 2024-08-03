@@ -1,0 +1,59 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Os romanos</title>
+    <link rel="stylesheet" href="../resource/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="../resource/js/script.js" defer></script>
+</head>
+
+<body>
+    <section>
+        <div class="d-flex vh-100 bg-light bg-gradient text-body-tertiary">
+            <div class="container align-self-center justify-self-center w-50">
+                <div class="d-flex w-100 flex-column justify-content-center align-items-center shadow rounded p-5">
+                    <h1>Conversor de números</h1>
+                    <!-- Algarismos indo-arábicos -->
+                    <form action="/romano" method="post" class="w-100">
+                        <div class="row align-items-end mb-2">
+                            <div class="col">
+                                <label for="indo-arabicos" class="p-1">Algarismos indo-arábicos</label>
+                                <input type="number" class="form-control" name="indo-arabicos" id="indo-arabicos"
+                                    placeholder="Ex: 1, 4, 10, ..., n" value="">
+                            </div>
+                            <div class="col"><button type="submit" class="btn btn-primary w-100">Para romano</button></div>
+                        </div>
+                    </form>
+                    <!-- Algarismos romanos -->
+                    <form action="/indo-arabico" method="post" class="w-100">
+                        <div class="row align-items-end mb-2">
+                            <div class="col">
+                                <label for="romanos" class="p-1">Algarismos romanos</label>
+                                <input type="text" class="form-control" name="romanos" id="romanos"
+                                    placeholder="Ex: I, IV, X, ..., n" value="">
+                            </div>
+                            <div class="col"><button type="submit" class="btn btn-primary w-100">Para indo-arábico</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Exibir o resultado -->
+                    <div class="mt-3" id="result">
+                        <?php if( isset($romano) ){ ?>
+                            <h2>Resultado: <span id="indo"><?php echo htmlspecialchars( $indo, ENT_COMPAT, 'UTF-8', FALSE ); ?></span> = <span class="text-uppercase"><?php echo htmlspecialchars( $romano, ENT_COMPAT, 'UTF-8', FALSE ); ?></span></h2>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
