@@ -3,14 +3,21 @@
 require_once("vendor/autoload.php");
 
 use Slim\Slim;
-use Demander\Conversor;
 use Demander\Page;
+use Demander\Models\Frame;
 
 $app = new Slim();
 
-$app->get('/', function() {
+$app->get('/', function () {
+    $frame = new Frame('');
     $page = new Page();
-    $page->setTemplate('index');
+    $page->setTemplate('index', array(
+        "frames" => $frame->getFrames(),
+    ));
+});
+
+$app->get('/saveFrame', function () {
+
 });
 
 $app->config('debug', true);
