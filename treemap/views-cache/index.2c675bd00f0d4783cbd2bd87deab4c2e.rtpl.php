@@ -17,11 +17,13 @@
             <h1 class="text-center">The Treemap</h1>
             <div class="d-flex justify-content-center">
                 <div class="row board shadow">
-                    <?php $counter1=-1;  if( isset($frames) && ( is_array($frames) || $frames instanceof Traversable ) && sizeof($frames) ) foreach( $frames as $key1 => $value1 ){ $counter1++; ?>
-                        <div class="col-1 frame" data-largura="<?php echo htmlspecialchars( $value1["largura"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-variacao="<?php echo htmlspecialchars( $value1["variacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
-                            <span><?php echo htmlspecialchars( $value1["name"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
-                        </div>
-                    <?php } ?>
+                    <button>
+                        <?php $counter1=-1;  if( isset($frames) && ( is_array($frames) || $frames instanceof Traversable ) && sizeof($frames) ) foreach( $frames as $key1 => $value1 ){ $counter1++; ?>
+                            <div class="col-1 frame" data-largura="<?php echo htmlspecialchars( $value1["largura"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-variacao="<?php echo htmlspecialchars( $value1["variacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                                <span><?php echo htmlspecialchars( $value1["name"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                            </div>
+                        <?php } ?>
+                    </button>
                 </div>
             </div>
         </div>
