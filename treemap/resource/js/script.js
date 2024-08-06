@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const frames = document.querySelectorAll(".frame");
     frames.forEach(frame => {
-        const largura = frame.getAttribute('data-largura');
-        const variacao = frame.getAttribute('data-variacao') * (15/100 * 255) ; // taxa RGB vai de 0 ao 255;
+        const largura = (frame.getAttribute('data-largura')/100) * 600;
+        const variacao = frame.getAttribute('data-variacao') * (20/100 * 255) ; // taxa RGB vai de 0 ao 255;
 
         // Define a largura do elemento
-        frame.style.setProperty('--largura-elemento', `${largura}%`);
+        frame.style.setProperty('--largura-elemento', `${largura}px`);
 
         // Calcula a variação de cor e aplica ao elemento
         calcularVariacao(frame, variacao);

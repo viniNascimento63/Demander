@@ -18,8 +18,9 @@
             <div class="d-flex justify-content-center">
                 <div class="row board shadow">
                     {loop="$frames"}
-                        <div class="col-1 frame" data-largura="{$value.largura}" data-variacao="{$value.variacao}">
-                            <span>{$value.name}</span>
+                        <div class="frame d-flex flex-column" data-largura="{$value.largura}" data-variacao="{$value.variacao}">
+                            <div>{$value.name}</div>
+                            <div>{$value.largura}%</div>
                         </div>
                     {/loop}
                 </div>
