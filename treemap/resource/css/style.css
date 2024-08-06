@@ -6,15 +6,16 @@
 .board {
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .frame {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: var(--largura-elemento);
+    max-height: var(--largura-elemento);
+    min-width: calc(var(--largura-elemento)/2);
     padding: 10px;
     background-color: rgb(var(--red-rate), var(--green-rate), 0);
     border: .01rem solid #e6e6e6;
